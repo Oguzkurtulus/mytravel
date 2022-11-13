@@ -1,5 +1,46 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  div(class='container-sm')
+    div(class='row')
+      div(class='row')
+        div(class='mb-2 col')
+          div(class='h-100 card')
+            div(class='card-body')
+              div(id='destination' class='mb-2')
+                label(id='destination-label' for='destination-input' class='form-label') Destination
+                div(class='input-group')
+                  span(class='input-group-text')
+                    i(class='bi-calendar')
+                  input(type='text' class='form-control' id='destination-input' aria-describedby='destination-label')
+
+    div(class='row')
+      div(class='mb-2 col')
+        div(class='h-100 card')
+          div(class='card-body')
+            div(id='departure-date' class='mb-2')
+              label(id='departure-date-label' for='departure-date-input' class='form-label') Departure date
+              div(class='input-group')
+                span(class='input-group-text')
+                  i(class='bi-calendar')
+                input(type='date' class='form-control' id='departure-date-input' aria-describedby='departure-date-label')
+            div(id='return-date' class='mb-2')
+              label(id='return-date-label' for='return-date-input' class='form-label') Return date
+              div(class='input-group')
+                span(class='input-group-text')
+                  i(class='bi-calendar-fill')
+                input(type='date' class='form-control' id='return-date-input' aria-describedby='return-date-label')
+    div(class='row')
+      div(class='mb-2 col')
+        div(class='h-100 card')
+          div(class='card-body')
+            div(id='adults' class='mb-2')
+              label(id='adults-label' for='adults-input' class='form-label') Adults
+              div(class='input-group')
+                span(class='input-group-text') Adults
+                input(type='number' class='form-control' id='adults-input' aria-describedby='adults-label')
+            div(id='children' class='mb-2')
+              label(id='children-label' for='children-input' class='form-label') Children
+              div(class='input-group')
+                span(class='input-group-text') 12 years old and older
+                input(type='number' class='form-control' id='children-input' aria-describedby='children-label')

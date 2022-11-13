@@ -1,38 +1,19 @@
 doctype html
+
 html(lang='en')
   head
     title= title
     meta(charset='utf-8')
     meta(name='viewport', content='width=device-width, initial-scale=1')
-    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+    link(rel='stylesheet', href='https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css', integrity='sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi', crossorigin='anonymous')
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
-    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
     div(class='container-fluid')
+      include header
       div(class='row')
-        div(class='col-sm-2')
-          block sidebar
-            ul(class='sidebar-nav')
-              //- The content below will be visible to users who have logged in.
-              if isAuthenticated
-                li
-                  p
-                    span #[em Welcome,]
-                    br
-                    span #{current_user.fullname}
-                li
-                  a(href=current_user.url) Profile
-                li
-                  a(href='/users/logout') Logout
-
-              //- The content below will be visible to users who have NOT logged in.
-              else
-                li
-                  a(href='/users/register') Register
-                li
-                  a(href='/users/login') Login
-
-
         div(class='col-sm-10')
           block content
+      include footer
+      script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
