@@ -9,10 +9,10 @@ block content
       p Please enter your username and email. If they match a user, you will be redirected to the password reset page.
       div.form-group
         label(for="username") Username:
-        input#username.form-control(type="text" placeholder="johndoe" name="username" required=is_first_step value=(undefined===user ? "" : user.username))
+        input#username.form-control(type="text" placeholder="pick a username" name="username" required=is_first_step value=(undefined===user ? "" : user.username))
       div.form-group
         label(for="email") E-mail:
-        input#email.form-control(type="email" placeholder="johndoe@john.doe" name="email" required=is_first_step value=(undefined===user ? "" : user.email))
+        input#email.form-control(type="email" placeholder="youremail@gmail.com" name="email" required=is_first_step value=(undefined===user ? "" : user.email))
       
     if is_second_step
       p Almost there. Enter your new password twice and you're good to go!
